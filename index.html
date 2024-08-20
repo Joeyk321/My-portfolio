@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joey Katach - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="home-page">
+    <div class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <!-- Circular Image of Joey -->
+            <img src="photo of me.jpg" alt="Joey Katach" class="circular-image">
+            <h1>Joey Katach</h1>
+            <p>Web Developer</p>
+            <p>BS Information Systems, Brooklyn College</p> <!-- New line added -->
+            <div class="social-links">
+                <a href="https://www.instagram.com/joeyk321/" target="_blank">Instagram</a>
+                <a href="mailto:joeykatach@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/joey-katach-431603270/" target="_blank">LinkedIn</a>
+            </div>
+            <a href="#" class="portfolio-button">Click here to view my portfolio</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector('.portfolio-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.body.classList.add('slide-out');
+
+                setTimeout(function() {
+                    window.location.href = "portfolio.html";
+                }, 1000); // Matches the CSS transition duration
+            });
+        });
+    </script>
+</body>
+</html>

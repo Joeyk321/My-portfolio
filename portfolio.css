@@ -1,0 +1,204 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+    background-color: #2e2e2e; /* Set the background color to grey */
+    transition: transform 1s ease-in-out, background-color 1s ease-in-out; /* Smooth slide effect with color transition */
+}
+
+body.slide-in {
+    transform: translateX(100%);
+    background-color: #2e2e2e; /* Ensure the slide-in background color is grey */
+    transition: transform 1s ease-in-out, background-color 1s ease-in-out; /* Smooth slide-in effect */
+}
+
+header {
+    background-color: #333;
+    background-image: url('coding in computer.jpg'); /* Add your background image */
+    background-size: cover; /* Ensure the image covers the entire header */
+    background-position: center; /* Center the image */
+    height: 100px;
+    color: #dad6d6;
+    padding: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.top-left-image {
+    width: 175px;
+    height: 175px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: 3px solid #444;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #444;
+    overflow: hidden;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 14px 20px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    color: #c5c4c1;
+}
+
+section {
+    background-color: #3d3d3d;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #3790bd;
+    border-bottom: 2px solid #6e6d6d;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #f4f4f4;
+}
+
+#projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project-card {
+    background-color: #4e4e4e;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.project-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card h3 {
+    font-size: 24px;
+    color: #3790bd;
+    margin-top: 0;
+}
+
+.project-card p {
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+.project-button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.project-button:hover {
+    background-color: #555;
+    color: #e0e0dc;
+}
+
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 18px;
+    color: #f4f4f4;
+    text-align: center;
+}
+
+.contact-list a {
+    color: #3790bd;
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
+
+.social-contact {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-contact h3 {
+    font-size: 22px;
+    color: #3790bd;
+}
+
+.social-contact ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.social-contact ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.social-contact ul li a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-contact ul li a:hover {
+    color: #70706e;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 40px;
+}
+.container {
+    background-color: #f2f2f2; /* Light grey background */
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto; /* Center the container */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
