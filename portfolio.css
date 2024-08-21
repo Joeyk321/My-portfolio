@@ -132,6 +132,13 @@ p {
     line-height: 1.6;
     color: #f4f4f4;
 }
+.project-image {
+    width: 100%; /* Adjust width to fit within the project card */
+    max-width: 250px; /* Optional: Set a maximum width */
+    margin-bottom: 15px; /* Add some space between the image and text */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
 
 #projects-container {
     display: flex;
