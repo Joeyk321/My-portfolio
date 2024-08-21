@@ -4,57 +4,66 @@ body, html {
     height: 100%;
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
-    background-color: #2e2e2e; /* Set the background color to grey */
-    transition: transform 1s ease-in-out, background-color 1s ease-in-out; /* Smooth slide effect with color transition */
+    background-color: #2e2e2e;
+    transition: transform 1s ease-in-out, background-color 1s ease-in-out;
 }
 
 body.slide-out {
     transform: translateX(-100%);
-    background-color: #2e2e2e; /* Set the slide-out background color to grey */
+    background-color: #2e2e2e;
 }
 
 .hero {
-    background-image: url('coding.jpg'); /* Background image */
+    background-image: url('coding.jpg');
     background-size: cover;
     background-position: center;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    padding: 20px;
 }
 
 .content {
-    position: relative;
-    z-index: 2;
+    max-width: 90%;
     text-align: center;
-    color: rgb(145, 145, 145);
+    color: white;
 }
 
 .circular-image {
-    width: 300px;
-    height: 300px;
+    width: 20%;
+    max-width: 150px;
+    height: auto;
     border-radius: 50%;
     margin: 20px auto;
     border: 4px solid white;
 }
 
 h1 {
-    font-size: 64px;
+    font-size: 48px;
     margin: 10px 0;
 }
 
 p {
-    font-size: 24px;
+    font-size: 18px;
     margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    .circular-image {
+        width: 80px;
+        margin: 10px auto;
+    }
+    .social-links a {
+        font-size: 16px;
+    }
 }
 
 .social-links a {
@@ -85,20 +94,15 @@ p {
     background-color: #333;
     color: #9d9d9c;
 }
-.content p {
-    margin: 5px 0;
-    font-size: 24px;
+
+#intro-text::after, #job-title::after {
+    content: '|';
+    animation: blink 1s infinite;
+    opacity: 1;
+    margin-left: 5px;
 }
 
-.content h1 {
-    font-size: 64px;
-    margin: 10px 0;
-}
-
-.content .social-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 18px;
-    transition: color 0.3s;
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
