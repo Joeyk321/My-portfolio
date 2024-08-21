@@ -8,10 +8,37 @@ body, html {
     transition: transform 1s ease-in-out, background-color 1s ease-in-out; /* Smooth slide effect with color transition */
 }
 
-body.slide-in {
-    transform: translateX(100%);
-    background-color: #2e2e2e; /* Ensure the slide-in background color is grey */
-    transition: transform 1s ease-in-out, background-color 1s ease-in-out; /* Smooth slide-in effect */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 header {
@@ -24,6 +51,8 @@ header {
     padding: 50px;
     text-align: center;
     position: relative;
+    opacity: 0;
+    animation: slideInFromLeft 1s ease-in-out forwards;
 }
 
 .top-left-image {
@@ -34,6 +63,9 @@ header {
     top: 10px;
     left: 10px;
     border: 3px solid #444;
+    opacity: 0;
+    animation: slideInFromLeft 1s ease-in-out forwards;
+    animation-delay: 0.5s;
 }
 
 nav ul {
@@ -43,6 +75,9 @@ nav ul {
     background-color: #444;
     overflow: hidden;
     text-align: center;
+    opacity: 0;
+    animation: slideInFromRight 1s ease-in-out forwards;
+    animation-delay: 1s;
 }
 
 nav ul li {
@@ -59,6 +94,19 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #555;
     color: #c5c4c1;
+}
+
+.container {
+    background-color: #f2f2f2; /* Light grey background */
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto; /* Center the container */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: slideInFromBottom 1s ease-in-out forwards;
+    animation-delay: 1.5s;
 }
 
 section {
@@ -102,6 +150,8 @@ p {
     transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
     opacity: 0;
     transform: translateY(20px);
+    animation: slideInFromBottom 1s ease-in-out forwards;
+    animation-delay: 2s;
 }
 
 .project-card.show {
@@ -170,7 +220,7 @@ p {
     text-align: center;
 }
 
-.social-contact ul li {
+social-contact ul li {
     display: inline;
     margin: 0 15px;
 }
@@ -192,13 +242,7 @@ footer {
     background-color: #333;
     color: #fff;
     margin-top: 40px;
-}
-.container {
-    background-color: #f2f2f2; /* Light grey background */
-    border: 1px solid #ccc; /* Light grey border */
-    padding: 20px;
-    max-width: 900px;
-    margin: 20px auto; /* Center the container */
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: slideInFromLeft 1s ease-in-out forwards;
+    animation-delay: 2.5s;
 }
