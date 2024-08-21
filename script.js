@@ -1,18 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const introText = "Hello! My name is Joey Katach!";
-    const jobTitleText = "Web Developer";
-    
+    const introText = "Hi there! I'm Joey Katach,";
+    const jobTitleText = "a passionate Web Developer.";
+    const callToActionText = "Please click the button below to explore my portfolio.";
+
     let introIndex = 0;
     let jobTitleIndex = 0;
+    let callToActionIndex = 0;
     const typingSpeed = 100; // Adjust the speed of typing (milliseconds)
-    
+
     function typeIntro() {
         if (introIndex < introText.length) {
             document.getElementById("intro-text").innerHTML += introText.charAt(introIndex);
             introIndex++;
             setTimeout(typeIntro, typingSpeed);
         } else {
-            setTimeout(typeJobTitle, typingSpeed); // Start typing the job title after intro
+            setTimeout(typeJobTitle, typingSpeed);
         }
     }
 
@@ -21,12 +23,22 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("job-title").innerHTML += jobTitleText.charAt(jobTitleIndex);
             jobTitleIndex++;
             setTimeout(typeJobTitle, typingSpeed);
+        } else {
+            setTimeout(typeCallToAction, typingSpeed);
+        }
+    }
+
+    function typeCallToAction() {
+        if (callToActionIndex < callToActionText.length) {
+            document.getElementById("call-to-action").innerHTML += callToActionText.charAt(callToActionIndex);
+            callToActionIndex++;
+            setTimeout(typeCallToAction, typingSpeed);
         }
     }
 
     typeIntro(); // Start typing the intro text
 
-    // Handle the portfolio button click with a slide-out effect
+    // Handle the portfolio button click
     document.querySelector('.portfolio-button').addEventListener('click', function(e) {
         e.preventDefault(); // Prevent the default link behavior
         document.body.classList.add('slide-out'); // Add slide-out class for animation
