@@ -240,7 +240,8 @@ social-contact ul li {
 }
 
 .social-contact ul li a:hover {
-    color: #70706e;
+    color: #3790bd;
+    text-decoration: underline;
 }
 
 footer {
