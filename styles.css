@@ -86,7 +86,8 @@ p {
 }
 
 .social-links a:hover {
-    color: #45529f;
+    color: #3790bd;
+    text-decoration: underline;
 }
 
 .portfolio-button {
