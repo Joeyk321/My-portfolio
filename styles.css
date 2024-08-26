@@ -7,6 +7,17 @@ body, html {
     background-color: #2e2e2e;
     transition: transform 1s ease-in-out, background-color 1s ease-in-out;
 }
+.quote {
+    text-align: center;
+    font-style: italic;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-bottom: 1px solid #444;
+    margin-bottom: 20px;
+}
+
 
 body.slide-out {
     transform: translateX(-100%);
@@ -108,4 +119,13 @@ p {
 }
 #intro-text, #job-title, #call-to-action {
     color: grey; /* Set the text color to grey */
+}
+.footer {
+    text-align: center;
+    background-color: #2e2e2e;
+    color: #ffffff;
+    padding: 15px;
+    border-top: 1px solid #444;
+    margin-top: auto; /* Pushes the footer to the bottom of the content */
+    width: 100%;
 }
