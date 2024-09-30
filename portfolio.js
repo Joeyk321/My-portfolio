@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Trigger the body slide-in effect
+    // Remove slide-in class to show content after load
     document.body.classList.remove('slide-in');
 
-    // Add delay to each project card to create a staggered animation
+    // Staggered animation for project cards
     const projects = document.querySelectorAll('.project-card');
     projects.forEach((project, index) => {
         setTimeout(() => {
             project.classList.add('show');
-        }, index * 200); // Staggered animation: 200ms delay between each
+        }, index * 200); // Stagger the animation with a 200ms delay between cards
     });
 });

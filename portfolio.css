@@ -1,13 +1,15 @@
+/* General Styles */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
-    background-color: #2e2e2e; /* Set the background color to grey */
-    transition: transform 1s ease-in-out, background-color 1s ease-in-out; /* Smooth slide effect with color transition */
+    background-color: #2e2e2e; /* Background color */
+    transition: transform 1s ease-in-out, background-color 1s ease-in-out;
 }
 
+/* Slide-in animations */
 @keyframes slideInFromLeft {
     from {
         transform: translateX(-100%);
@@ -41,12 +43,13 @@ body, html {
     }
 }
 
+/* Header Section */
 header {
     background-color: #333;
-    background-image: url('coding in computer.jpg'); /* Add your background image */
-    background-size: cover; /* Ensure the image covers the entire header */
-    background-position: center; /* Center the image */
-    height: 100px;
+    background-image: url('coding in computer.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
     color: #dad6d6;
     padding: 50px;
     text-align: center;
@@ -68,12 +71,12 @@ header {
     animation-delay: 0.5s;
 }
 
+/* Navigation */
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     background-color: #444;
-    overflow: hidden;
     text-align: center;
     opacity: 0;
     animation: slideInFromRight 1s ease-in-out forwards;
@@ -96,12 +99,13 @@ nav ul li a:hover {
     color: #c5c4c1;
 }
 
+/* Container */
 .container {
-    background-color: #f2f2f2; /* Light grey background */
-    border: 1px solid #ccc; /* Light grey border */
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
     padding: 20px;
     max-width: 900px;
-    margin: 20px auto; /* Center the container */
+    margin: 20px auto;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     opacity: 0;
@@ -109,6 +113,7 @@ nav ul li a:hover {
     animation-delay: 1.5s;
 }
 
+/* Section Styling */
 section {
     background-color: #3d3d3d;
     margin: 20px auto;
@@ -132,12 +137,14 @@ p {
     line-height: 1.6;
     color: #f4f4f4;
 }
+
+/* Project Cards */
 .project-image {
-    width: 100%; /* Adjust width to fit within the project card */
-    max-width: 250px; /* Optional: Set a maximum width */
-    margin-bottom: 15px; /* Add some space between the image and text */
-    border-radius: 5px; /* Optional: Add rounded corners */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 #projects-container {
@@ -193,6 +200,7 @@ p {
     color: #e0e0dc;
 }
 
+/* Contact List */
 .contact-list {
     list-style-type: none;
     padding: 0;
@@ -227,7 +235,7 @@ p {
     text-align: center;
 }
 
-social-contact ul li {
+.social-contact ul li {
     display: inline;
     margin: 0 15px;
 }
@@ -244,6 +252,7 @@ social-contact ul li {
     text-decoration: underline;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 10px;
@@ -253,4 +262,39 @@ footer {
     opacity: 0;
     animation: slideInFromLeft 1s ease-in-out forwards;
     animation-delay: 2.5s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        height: 150px;
+        padding: 30px;
+    }
+
+    .top-left-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .project-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-image {
+        max-width: 100%;
+    }
 }
