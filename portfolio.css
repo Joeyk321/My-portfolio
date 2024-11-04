@@ -1,13 +1,27 @@
 /* General Styles */
+
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
-    background-color: #2e2e2e; /* Background color */
-    transition: transform 1s ease-in-out, background-color 1s ease-in-out;
+    background: linear-gradient(135deg, #1f1f1f, #3a3a3a); /* Dark gradient */
+    color: #e5e5e5;
+    position: relative;
 }
+
+
+#floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Places canvas behind other elements */
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
 
 /* Slide-in animations */
 @keyframes slideInFromLeft {
@@ -42,6 +56,68 @@ body, html {
         opacity: 1;
     }
 }
+/* Custom Cursor */
+.custom-cursor {
+    width: 15px;
+    height: 15px;
+    background-color: rgb(156, 153, 153);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 3000;
+    transition: transform 0.1s ease-in-out, background-color 0.2s ease;
+    will-change: transform;
+}
+
+/* Bubble Around the Cursor */
+.cursor-bubble {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 2999;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+/* Bubble Effect on Hover */
+.custom-cursor.hover {
+    background-color:#3790bd; /* Light blue on hover */
+    width: 20px;
+    height: 20px;
+}
+
+.cursor-bubble.hover {
+    width: 60px;
+    height: 60px;
+    border-color: #3790bd;
+}
+
+/* Bubble Effect on Click */
+.custom-cursor.click {
+    background-color: rgba(104, 102, 102, 0.8); /* Red on click */
+    width: 25px;
+    height: 25px;
+}
+
+.cursor-bubble.click {
+    border-color: #3790bd; /* Change border color on click */
+    width: 70px;
+    height: 70px;
+}
+
+/* Smooth Movement Animation */
+@keyframes cursor-trail {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
 
 /* Header Section */
 header {
@@ -49,7 +125,7 @@ header {
     background-image: url('coding in computer.jpg');
     background-size: cover;
     background-position: center;
-    height: 200px;
+    height: 125px;
     color: #dad6d6;
     padding: 50px;
     text-align: center;
@@ -99,105 +175,269 @@ nav ul li a:hover {
     color: #c5c4c1;
 }
 
-/* Container */
-.container {
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
+/* Container Styling */
+#projects-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    max-width: 900px;
-    margin: 20px auto;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    animation: slideInFromBottom 1s ease-in-out forwards;
-    animation-delay: 1.5s;
+}
+
+/* Display two columns for screens 768px and above */
+@media (min-width: 768px) {
+    #projects-container {
+        grid-template-columns: 1fr 1fr; /* Two columns */
+    }
 }
 
 /* Section Styling */
 section {
     background-color: #3d3d3d;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
-}
-
-h2 {
-    font-size: 28px;
-    color: #3790bd;
-    border-bottom: 2px solid #6e6d6d;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 1000px;
+    width: 90%;
     text-align: center;
 }
 
+h2 {
+    font-size: 2.5rem;
+    color: #3790bd;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 3px solid #6e6d6d;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    width: 80px;
+    height: 4px;
+    background-color: #a8a7a6;
+    opacity: 0.8;
+}
+
 p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #f4f4f4;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #d0d0d0;
+    max-width: 800px;
+    margin: 0 auto 20px;
 }
 
-/* Project Cards */
-.project-image {
-    width: 100%;
-    max-width: 250px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
+/* Project Container */
 #projects-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
 }
-
+/* Project Card Styling */
 .project-card {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #4e4e4e;
-    border-radius: 5px;
     padding: 20px;
-    margin: 10px;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideInFromBottom 1s ease-in-out forwards;
-    animation-delay: 2s;
 }
 
-.project-card.show {
-    opacity: 1;
-    transform: translateY(0);
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .project-card h3 {
-    font-size: 24px;
-    color: #3790bd;
-    margin-top: 0;
+    font-size: 1.8rem;
+    color: #ffd700;
+    margin: 10px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .project-card p {
-    font-size: 16px;
+    font-size: 1rem;
     color: #e0e0e0;
+    margin: 10px 0;
 }
 
+/* Project Image */
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05); /* Zoom effect */
+}
+
+/* Overlay for "Coming Soon" */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    padding: 20px;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+
+}
+
+/* Overlay Text */
+.project-overlay h3 {
+    font-size: 2rem;
+    color: #ffd700; /* Gold color for title */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+
+.project-overlay .project-description {
+    font-size: 1rem;
+    color: #e0e0e0;
+    max-width: 80%;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.project-overlay .coming-soon {
+    font-size: 3.3rem;
+    font-weight: bold;
+    color: #736e6d;
+    margin-top: 10px;
+    transform: translateX(-5px); /* Slightly adjusts text to the left */
+}
+
+/* Project Button */
 .project-button {
+    display: inline-block;
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
     background-color: #333;
     padding: 10px 20px;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-    display: inline-block;
-    margin-top: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
+    margin-top: 15px;
 }
 
 .project-button:hover {
     background-color: #555;
     color: #e0e0dc;
+    transform: scale(1.05);
+}
+
+/* Hover and Animation Effects */
+.project-card:hover .project-image {
+    transform: scale(1.08);
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    color: #3790bd;
+}
+
+.project-card p {
+    font-size: 1rem;
+}
+
+
+/* Button Styling in Overlay */
+.project-overlay .project-button {
+    background-color: #ffd700;
+    color: #333;
+    margin-top: 15px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+
+.project-overlay .project-button:hover {
+    background-color: #928b8a;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    #projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 100%;
+        margin: 15px 0;
+    }
+
+    #projects h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Footer */
+footer {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    section {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    .project-card {
+        max-width: 90%;
+    }
+
+    .project-overlay h3 {
+        font-size: 1.6rem;
+    }
+
+    .project-overlay .project-description,
+    .project-overlay .coming-soon {
+        font-size: 1rem;
+    }
+
+    .project-overlay .project-button {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
 }
 
 /* Contact List */
@@ -267,7 +507,7 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
-        height: 150px;
+        height: 100px;
         padding: 30px;
     }
 
@@ -297,4 +537,14 @@ footer {
     .project-image {
         max-width: 100%;
     }
+}
+/* Canvas Styling */
+#bubble-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensures canvas does not interfere with clicks */
+    z-index: -1; /* Places canvas behind all other content */
 }
