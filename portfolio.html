@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joey Katach - Portfolio</title>
-    <link rel="stylesheet" href="portfolio.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="portfolio.css"> 
     <canvas id="bubble-canvas"></canvas>
-
 </head>
 
 <body class="slide-in">
@@ -14,6 +13,9 @@
         <img src="photo of me.jpg" alt="Joey Katach" class="top-left-image">
         <h1>My Portfolio</h1>
     </header>
+
+    <div class="aurora"></div>
+
     
     <nav>
         <ul>
@@ -23,14 +25,28 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+ 
     
     <div class="container">
         <!-- About Me Section -->
         <section id="about">
             <h2>About Me</h2>
             <p>
-                Hello! I'm Joey Katach, a student at Brooklyn College majoring in Information Systems. I specialize in web development, creating modern and responsive websites that are both visually appealing and functionally robust.
+                Hello! I'm Joey Katach, a student at Brooklyn College majoring in Information Systems. My journey in technology and web development has been fueled by a strong passion for creating modern, responsive, and user-friendly websites. My goal is to blend visual appeal with functional robustness, ensuring that each project not only looks great but also delivers seamless, effective user experiences. <br><br>
+            
+                Throughout my studies and hands-on experience, I've gained a strong foundation in front-end and back-end development, mastering technologies such as HTML, CSS, JavaScript, and frameworks like React and Node.js. I’ve also delved into e-commerce development, content management systems, and digital marketing, giving me a well-rounded understanding of how websites can drive business growth.<br><br>
+            
+                I believe in a strategic, client-centered approach to web design. By thoroughly understanding the needs and goals of each project, I ensure that my designs align with the brand and provide value to end-users. Outside of academics, I’m constantly exploring the latest trends and innovations in web development, striving to stay at the forefront of industry advancements.<br><br>
+            
+                With a commitment to continuous learning and improvement, I look forward to building a career where I can create impactful, scalable web solutions that help businesses succeed and grow.
             </p>
+            
         </section>
 
         <!-- Projects Section -->
@@ -38,15 +54,15 @@
             <h2>Projects</h2>
             <div id="projects-container">
                 <div class="project-card">
-                    <h3>Paris Olympics Project</h3>
                     <img src="paris olympic.jpg" alt="Paris Olympics" class="project-image">
+                    <h3>Paris Olympics Project</h3>
                     <p>This project showcases a single-page website for the Paris Olympic Games, including sections for home, medal rankings, sports, and news.</p>
                     <a href="https://joeyk321.github.io/Cics-3140-Project-2/" target="_blank" class="project-button">View Project</a>
                 </div>
 
                 <div class="project-card">
-                    <h3>Gainclothes Project</h3>
                     <img src="Gain image.jpg" alt="Gainclothes" class="project-image">
+                    <h3>Gainclothes Project</h3>
                     <p>Gainclothes is a premium e-commerce platform that I designed and managed using Shopify.</p>
                     <a href="https://gainclothes.com/" target="_blank" class="project-button">View Project</a>
                 </div>
@@ -68,6 +84,9 @@
                 <div class="project-card">
                     <h3>Project 4</h3>
                     <p>A brief description of Project 4.</p>
+                    <div class="project-overlay">
+                        <span class="coming-soon">Coming Soon</span>
+                    </div>
                     <a href="#" class="project-button">View Project</a>
                 </div>
             </div>
@@ -93,8 +112,9 @@
     <footer>
         <p>&copy; 2024 Joey Katach - Portfolio</p>
     </footer>
-    <canvas id="floating-particles"></canvas>
-    <script src="portfolio.js"></script>     <!-- Make sure your JS file is loaded -->
+
     <div class="custom-cursor"></div>
+    <script src="portfolio.js"></script>   
+
 </body>
 </html>
