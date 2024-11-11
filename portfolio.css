@@ -665,7 +665,8 @@ footer {
 
     h2 {
         font-size: 1.5rem;
-        margin-bottom: 10px;    }
+        margin-bottom: 10px;    
+}
 
     p {
         font-size: 0.9rem;
@@ -702,7 +703,7 @@ footer {
 @media (max-width: 414px) {
      /* General background adjustments */
      body, html {
-        background: linear-gradient(135deg, #3790bd, #505868); /* Main blue background */
+        background: linear-gradient(135deg, #3790bd, #505868);
         color: #e5e5e5;
         overflow-x: hidden; /* Prevents horizontal scroll */
     }
@@ -741,6 +742,12 @@ footer {
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds contrast for readability */
         margin: 0;
     }
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px; 
+        color: #3790bd;   
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds contrast for readability */
+}
 
     /* Adjustments to center and frame "My Portfolio" image */
     .top-left-image {
@@ -769,4 +776,3 @@ footer {
         padding: 8px;
     }
 }
-
