@@ -59,7 +59,8 @@ body::after {
     }
 
     p {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
 
     .project-card {
@@ -70,6 +71,10 @@ body::after {
     .project-overlay h3 {
         font-size: 1.5rem;
     }
+    section {
+        padding: 20px;
+        margin: 20px auto;
+    }
 
     .project-overlay .project-description,
     .project-overlay .coming-soon {
@@ -79,6 +84,17 @@ body::after {
     .project-overlay .project-button {
         padding: 8px 12px;
         font-size: 0.85rem;
+    }
+
+    /* Footer adjustments */
+    footer {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    /* Custom cursor and animation adjustments */
+    .custom-cursor, .cursor-bubble {
+        display: none; 
     }
 }
 
@@ -540,11 +556,14 @@ footer {
 
 @media (max-width: 768px) {
     h2 {
-        font-size: 2.2rem;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
     }
 
     .project-card {
-        max-width: 90%;
+        width: 90%;
+        max-width: 300px;
+        padding: 10px;
     }
 
     .project-overlay h3 {
@@ -629,31 +648,41 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
-        height: 100px;
-        padding: 30px;
+        height: auto;
+        padding: 20px;
     }
 
     .top-left-image {
-        width: 100px;
-        height: 100px;
+        width: 75px;
+        height: 75px;
+        border-radius: 5px;
+        top: 15px;
+        left: 15px;
+    }
+    h1 {
+        font-size: 1.8rem;
     }
 
     h2 {
-        font-size: 22px;
-    }
+        font-size: 1.5rem;
+        margin-bottom: 10px;    }
 
     p {
-        font-size: 16px;
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
 
     .project-card {
-        width: 100%;
-        margin: 10px 0;
+        width: 90%;
+        max-width: 300px;
+        padding: 10px;
     }
 
     #projects-container {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
 
     .project-image {
@@ -669,5 +698,53 @@ footer {
     height: 100%;
     pointer-events: none; /* Ensures canvas does not interfere with clicks */
     z-index: -1; /* Places canvas behind all other content */
+}
+@media (max-width: 414px) {
+    /* Header adjustments */
+    header {
+        padding: 10px;
+        height: auto;
+        text-align: center; /* Center aligns header text */
+        background-size: cover;
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Ensures visibility for "My Portfolio" */
+        font-weight: bold; /* Makes "My Portfolio" more prominent */
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds contrast for readability */
+        margin: 0;
+    }
+
+    /* Adjustments to center and frame "My Portfolio" image */
+    .top-left-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        top: 8px;
+        left: 8px;
+        position: absolute; /* Keep image in place without obstructing text */
+    }
+
+    /* Navigation adjustments for better spacing */
+    nav ul {
+        padding: 10px;
+    }
+
+    nav ul li a {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+    /* Section adjustments */
+    section {
+        padding: 15px;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 0.7rem;
+        padding: 8px;
+    }
 }
 
