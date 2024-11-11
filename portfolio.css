@@ -700,6 +700,32 @@ footer {
     z-index: -1; /* Places canvas behind all other content */
 }
 @media (max-width: 414px) {
+     /* General background adjustments */
+     body, html {
+        background: linear-gradient(135deg, #3790bd, #505868); /* Main blue background */
+        color: #e5e5e5;
+        overflow-x: hidden; /* Prevents horizontal scroll */
+    }
+
+    /* Gray overlay adjustments */
+    .aurora {
+        display: none; /* Hide extra effects that might cause clashing */
+    }
+
+    .container {
+        background-color: transparent; /* Remove gray background on small screens */
+        padding: 15px;
+    }
+
+    /* Section-specific adjustments for better integration */
+    section {
+        background-color: rgba(255, 255, 255, 0.05); /* Subtle translucent overlay */
+        border-radius: 8px;
+        margin: 15px auto;
+        padding: 20px;
+        box-shadow: none;
+        max-width: 100%;
+    }
     /* Header adjustments */
     header {
         padding: 10px;
@@ -736,10 +762,6 @@ footer {
         font-size: 0.85rem;
     }
 
-    /* Section adjustments */
-    section {
-        padding: 15px;
-    }
 
     /* Footer */
     footer {
