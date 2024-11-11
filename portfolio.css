@@ -703,7 +703,7 @@ footer {
 @media (max-width: 414px) {
      /* General background adjustments */
      body, html {
-        background: linear-gradient(135deg, #3790bd, #505868);
+        background: linear-gradient(135deg, #505868);
         color: #e5e5e5;
         overflow-x: hidden; /* Prevents horizontal scroll */
     }
