@@ -23,6 +23,68 @@ body.slide-out {
     transform: translateX(-100%);
     background-color: #2e2e2e;
 }
+/* Custom Cursor */
+.custom-cursor {
+    width: 15px;
+    height: 15px;
+    background-color: rgb(156, 153, 153);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 3000;
+    transition: transform 0.1s ease-in-out, background-color 0.2s ease;
+    will-change: transform;
+}
+
+/* Bubble Around the Cursor */
+.cursor-bubble {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(249, 238, 238, 0.2);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 2999;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+/* Bubble Effect on Hover */
+.custom-cursor.hover {
+    background-color:#3790bd; /* Light blue on hover */
+    width: 20px;
+    height: 20px;
+}
+
+.cursor-bubble.hover {
+    width: 60px;
+    height: 60px;
+    border-color: #3790bd;
+}
+
+/* Bubble Effect on Click */
+.custom-cursor.click {
+    background-color: rgba(104, 102, 102, 0.8); /* Red on click */
+    width: 25px;
+    height: 25px;
+}
+
+.cursor-bubble.click {
+    border-color: #3790bd; /* Change border color on click */
+    width: 70px;
+    height: 70px;
+}
+
+/* Smooth Movement Animation */
+@keyframes cursor-trail {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
 
 .hero {
     background-image: url('coding.jpg');
