@@ -888,7 +888,7 @@ footer {
     }
     /* Header adjustments */
     header {
-        padding: 80px;
+        padding: 65px;
         height: auto;
         text-align: center; /* Center aligns header text */
         background-size: cover;
@@ -910,8 +910,8 @@ footer {
 
     /* Adjustments to center and frame "My Portfolio" image */
     .top-left-image {
-        width: 60px;
-        height: 60px;
+        width: 7%;
+        height: 70px;
         border-radius: 5px;
         top: 50px;
         left: 8px;
