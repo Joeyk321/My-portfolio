@@ -3,6 +3,10 @@ body, html {
     background-size: 300% 300%;
     animation: gradientShift 15s ease infinite;
     color: #e5e5e5;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    margin: 0;
+    padding: 0;
+
 }
 
 @keyframes gradientShift {
@@ -580,9 +584,14 @@ footer {
         font-size: 0.85rem;
     }
 }
-
-#contact p {
+#contact h2 {
     font-size: 2.0em;
+    margin-bottom: 30px;
+    color:#3790bd;
+    ;
+}
+#contact p {
+    font-size: 1.8em;
     margin-bottom: 30px;
     color:#a09f9e ;
 }
@@ -779,18 +788,18 @@ footer {
 @media (max-width: 768px) {
     header {
         height: auto;
-        padding: 20px;
+        padding: 80px;
     }
 
     .top-left-image {
-        width: 75px;
-        height: 75px;
+        width: 125px;
+        height: 125px;
         border-radius: 5px;
-        top: 15px;
+        top: 25px;
         left: 15px;
     }
     h1 {
-        font-size: 1.8rem;
+        font-size: 2.3rem;
     }
 
     h2 {
@@ -859,21 +868,21 @@ footer {
     }
     /* Header adjustments */
     header {
-        padding: 10px;
+        padding: 80px;
         height: auto;
         text-align: center; /* Center aligns header text */
         background-size: cover;
     }
 
     h1 {
-        font-size: 1.8rem; /* Ensures visibility for "My Portfolio" */
+        font-size: 2.2.rem; /* Ensures visibility for "My Portfolio" */
         font-weight: bold; /* Makes "My Portfolio" more prominent */
         color: #ffffff;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds contrast for readability */
         margin: 0;
     }
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         margin-bottom: 10px; 
         color: #3790bd;   
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds contrast for readability */
