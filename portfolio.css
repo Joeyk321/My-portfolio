@@ -581,56 +581,186 @@ footer {
     }
 }
 
-/* Contact List */
+#contact p {
+    font-size: 2.0em;
+    margin-bottom: 30px;
+    color:#a09f9e ;
+}
+.contact-form {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.contact-form h3 {
+    font-size: 1.8em;
+    color: #3790bd;
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #333;
+    display: block;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact-form button {
+    background-color: #3790bd;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #a09f9e;
+}
+
+/* Styling for the contact list */
 .contact-list {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
-    font-size: 18px;
-    color: #f4f4f4;
-    text-align: center;
+    margin: 0;
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: center; /* Centers the items horizontally */
+    align-items: center; /* Optional: centers the items vertically if needed */
+    flex-direction: column; /* Stack items vertically */
 }
 
+/* Style for each list item */
+.contact-list li {
+    margin: 10px 0; /* Space between each item */
+    display: flex;
+    align-items: center; /* Ensures the icon and text are aligned */
+    justify-content: center; /* Centers the content of each list item */
+}
+
+
+/* Style for the links */
 .contact-list a {
-    color: #3790bd;
-    text-decoration: none;
+    font-size: 30px;
+    color: #0077b5; /* Text color */
+    text-decoration: none; /* Remove underline from links */
+    display: flex;
+    align-items: center;
 }
 
+/* Icon styling */
+.contact-list a i {
+    font-size: 45px; /* Icon size */
+    margin-right: 20px; /* Space between icon and text */
+}
+
+/* Hover effect */
 .contact-list a:hover {
-    text-decoration: underline;
+    color: #a8a7a7; /* Change color when hovering */
+    text-decoration: underline; 
 }
 
+.contact-list a:hover i {
+    color: #0077b5;/* Change icon color on hover */
+}
+
+
+/* Social media container */
 .social-contact {
-    margin-top: 20px;
     text-align: center;
+    margin-top: 40px;
 }
 
+/* Styling for the heading */
 .social-contact h3 {
-    font-size: 22px;
-    color: #3790bd;
-}
-
-.social-contact ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0;
-    text-align: center;
-}
-
-.social-contact ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-.social-contact ul li a {
-    color: #f4f4f4;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-.social-contact ul li a:hover {
-    color: #3790bd;
+    font-size: 56px;
     text-decoration: underline;
+    font-weight: 700;
+    color: #333; /* Dark color for the heading */
+    margin-bottom: 20px;
+    position: relative; /* Required for animation */
+    transition: color 0.3s ease, transform 0.3s ease; /* Animation for color change and scale effect */
+}
+
+/* Hover effect on the heading */
+.social-contact h3:hover {
+    color: #0077b5; /* Change color on hover */
+    transform: scale(1.1); /* Slight scale effect to make the text bigger */
+}
+
+/* Underline animation */
+.social-contact h3::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333; /* Underline color */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease; /* Animation for underline */
+}
+
+
+/* Style for the social media list */
+.social-contact ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Aligns the icons horizontally */
+    gap: 20px; /* Space between the icons */
+}
+
+/* Style for each list item */
+.social-contact ul li {
+    display: inline-block;
+}
+
+/* Style for the icons */
+.social-contact a i {
+    font-size: 56px; /* Icon size */
+    color: #333; /* Default icon color */
+    transition: color 0.3s, transform 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for the icons */
+.social-contact a:hover i {
+    color: #0077b5; /* LinkedIn color on hover */
+    transform: scale(1.1); /* Slight scale effect */
+}
+
+/* Hover effect for Instagram icon */
+.social-contact a:hover i.fab.fa-instagram {
+    color: #0077b5; /* Instagram color */
+}
+
+/* Adjust size and color for mobile view if needed */
+@media (max-width: 768px) {
+    .social-contact h3 {
+        font-size: 20px;
+    }
+
+    .social-contact a i {
+        font-size: 30px; /* Slightly smaller icons on mobile */
+    }
 }
 
 /* Footer */

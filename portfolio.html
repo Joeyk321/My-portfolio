@@ -6,6 +6,15 @@
     <title>Joey Katach - Portfolio</title>
     <link rel="stylesheet" href="portfolio.css"> 
     <canvas id="bubble-canvas"></canvas>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("z0-Ln8fXj5FVAFWkgQ5Q5Q5");
+        })();
+    </script>
 </head>
 
 <body class="slide-in">
@@ -92,21 +101,58 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact">
             <h2>Contact Me</h2>
+            <p>Ready to take your business to the next level? Feel free to reach out!</p>
             <ul class="contact-list">
-                <li>Email: <a href="mailto:joeykatach@gmail.com">joeykatach@gmail.com</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/joey-katach-431603270/" target="_blank">Joey Katach</a></li>
+                <li>
+                    <a href="mailto:joeykatach@gmail.com">
+                        <i class="fas fa-envelope"></i> <!-- Email Icon -->
+                        joeykatach@gmail.com
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/joey-katach-431603270/" target="_blank">
+                        <i class="fab fa-linkedin"></i> <!-- LinkedIn Icon -->
+                        Joey Katach
+                    </a>
+                </li>
             </ul>
-            <div class="social-contact">
-                <h3>Follow Me</h3>
-                <ul>
-                    <li><a href="https://www.instagram.com/joeyk321/" target="_blank">Instagram</a></li>
-                    <li><a href="https://www.linkedin.com/in/joey-katach-431603270/" target="_blank">LinkedIn</a></li>
-                </ul>
+        
+            <div class="contact-form">
+                <h3>Send Me a Message Here</h3>
+                <form id="message-form" autocomplete="on">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" autocomplete="name" required placeholder="Your Full Name">
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required placeholder="Your Email Address">
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
+                
             </div>
         </section>
+
+        <div class="social-contact">
+            <h3>Follow Me</h3>
+            <ul>
+                <li>
+                    <a href="https://www.instagram.com/joeyk321/" target="_blank">
+                        <i class="fab fa-instagram"></i> <!-- Instagram Icon -->
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/joey-katach-431603270/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i> <!-- LinkedIn Icon -->
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
     </div>
 
     <footer>
