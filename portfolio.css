@@ -910,7 +910,7 @@ footer {
 
     /* Adjustments to center and frame "My Portfolio" image */
     .top-left-image {
-        width: 70%;
+        width: 70px;
         height: 70px;
         border-radius: 5px;
         top: 50px;
