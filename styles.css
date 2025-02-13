@@ -193,6 +193,7 @@ p {
 }
 #intro-text, #job-title, #call-to-action {
     color: grey; /* Set the text color to grey */
+    font-family:'Castellar';
 }
 .footer {
     text-align: center;
